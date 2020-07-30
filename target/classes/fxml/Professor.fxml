@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfessorController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" style="-fx-background-color: #B0C4DE;">
+            <children>
+                <HBox prefHeight="6.0" prefWidth="600.0">
+                    <children>
+                        <JFXButton fx:id="btnIncluir" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#acIncluir" prefHeight="42.0" prefWidth="90.0">
+                            <tooltip>
+                                <Tooltip text="Novo Cadastro de Professor..." />
+                            </tooltip>
+                            <graphic>
+                                <MaterialDesignIconView glyphName="PLUS_BOX" size="2.2em" wrappingWidth="27.0">
+                                    <cursor>
+                                        <Cursor fx:constant="NE_RESIZE" />
+                                    </cursor>
+                                </MaterialDesignIconView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAlterar" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#acAlterar" prefHeight="42.0" prefWidth="90.0">
+                            <tooltip>
+                                <Tooltip text="Alterar Cadastro de Professor..." />
+                            </tooltip>
+                            <graphic>
+                                <MaterialDesignIconView glyphName="PENCIL_BOX" size="2.2em" wrappingWidth="27.0">
+                                    <cursor>
+                                        <Cursor fx:constant="NE_RESIZE" />
+                                    </cursor>
+                                </MaterialDesignIconView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnExcluir" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#acExcluir" prefHeight="42.0" prefWidth="90.0">
+                            <tooltip>
+                                <Tooltip text="Excluir Cadastro de Professor..." />
+                            </tooltip>
+                            <graphic>
+                                <MaterialDesignIconView glyphName="DELETE_FOREVER" size="2.2em" wrappingWidth="27.0">
+                                    <cursor>
+                                        <Cursor fx:constant="NE_RESIZE" />
+                                    </cursor>
+                                </MaterialDesignIconView>
+                            </graphic>
+                        </JFXButton>
+                    </children>                    
+                </HBox>
+                <TableView fx:id="tblVwProfessor" prefHeight="298.0" prefWidth="600.0" style="-fx-alignment: center-left;">
+                    <columns>
+                        <TableColumn minWidth="0.0" prefWidth="167.0" text="Nome">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="nome" />                            
+                            </cellValueFactory> 
+                        </TableColumn>                  
+                        <TableColumn prefWidth="281.0" style="-fx-alignment: center-left;" text="E-mail">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="email" />                            
+                            </cellValueFactory> 
+                        </TableColumn>                
+                        <TableColumn prefWidth="146.0" style="-fx-alignment: center-right;" text="CPF">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="cpf" />                            
+                            </cellValueFactory> 
+                        </TableColumn>
+                        <TableColumn prefWidth="230.0" style="-fx-alignment: center-right;" text="dataCadastro">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="dataCadastro" />                            
+                            </cellValueFactory> 
+                        </TableColumn>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#acIncluir" text="Incluir" />
+                                <MenuItem fx:id="menuItemAlterar" mnemonicParsing="false" onAction="#acAlterar" text="Alterar" />
+                                <MenuItem fx:id="menuItemExcluir" mnemonicParsing="false" onAction="#acExcluir" text="Excluir" />
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

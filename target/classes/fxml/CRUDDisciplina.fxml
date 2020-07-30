@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="145.0" prefWidth="525.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CRUDDisciplinaController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+   <children>
+      <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox>
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Código" />
+                        <TextField fx:id="txtFldCodigo" prefHeight="26.0" prefWidth="130.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Nome" />
+                        <TextField fx:id="txtFldNome" prefHeight="26.0" prefWidth="370.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="15.0" layoutY="15.0">
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Aulas" />
+                        <TextField fx:id="txtFldAulas" prefHeight="26.0" prefWidth="68.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Observação" />
+                        <TextField fx:id="txtFldObservacao" prefHeight="26.0" prefWidth="462.0" />
+                     </children>
+                      <children>
+                        <Label text="Maximo de alunos" />
+                        <TextField fx:id="txtFldMaxAlunos" prefHeight="26.0" prefWidth="462.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" spacing="5.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Professor" />
+                        <ComboBox fx:id="cmbProfessor" prefHeight="26.0" prefWidth="216.0" />
+                     </children>
+                  </VBox>
+                  <CheckBox fx:id="chBoxDesvincula" mnemonicParsing="false" text="Disvincula Prof" />
+                  <Button fx:id="btnConfirma" mnemonicParsing="false" onAction="#acConfirma" prefHeight="26.0" prefWidth="89.0" text="Confirma">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="CHECK" />
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#acCancela" prefHeight="26.0" prefWidth="81.0" text="Cancela">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="CLOSE" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" />
+   </padding>
+</AnchorPane>

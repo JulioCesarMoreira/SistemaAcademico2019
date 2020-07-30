@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="747.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MatriculaController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="lbNome" text="Label">
+                    <font>
+                        <Font name="Consolas Bold" size="36.0" />
+                    </font>
+                </Label>
+                <HBox prefHeight="343.0" prefWidth="600.0">
+                    <children>
+                        <TableView fx:id="tblVwMatriculas" prefHeight="300.0" prefWidth="850.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" style="-fx-alignment: center-left;" sortable="false" text="Disciplinas">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="disciplinaNome" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" style="-fx-alignment: center-right;" sortable="false" text="Nota 1º S">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="nota1S" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" sortable="false" style="-fx-alignment: center-right;" text="Nota 2º S">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="nota2S" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" style="-fx-alignment: center-right;" sortable="false" text="Nota Exam.">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="notaE" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" style="-fx-alignment: center-right;" sortable="false" text="Média">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="mediaFormatado" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" style="-fx-alignment: center-right;" sortable="false" text="Faltas">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="faltaFormatado" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="130.0" style="-fx-alignment: center-right;" sortable="false" text="Aulas previstas">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="aulas" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" style="-fx-alignment: center-right;" sortable="false" text="\% Presença">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="frequencia" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                                <TableColumn prefWidth="75.0" style="-fx-alignment: center-right;" sortable="false" text="Status">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="status" />                            
+                                    </cellValueFactory> 
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <JFXButton fx:id="btnFechar" onMouseClicked="#acCancela" prefHeight="50.0" prefWidth="14.0" text=" ">
+                     <graphic>
+                                <MaterialDesignIconView glyphName="REPLY_ALL" size="200%" wrappingWidth="15.0" />
+                     </graphic>
+                        </JFXButton>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

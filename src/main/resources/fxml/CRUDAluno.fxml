@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import org.controlsfx.control.ListSelectionView?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="290.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CRUDAlunoController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox>
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="RA" />
+                                <TextField fx:id="txtFldRA" prefHeight="26.0" prefWidth="153.0" />
+                                <Label text="Cidade" />
+                                <ComboBox fx:id="cmbCidade" prefHeight="26.0" prefWidth="216.0" />
+                            </children>
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Nome" />
+                                <TextField fx:id="txtFldNome" prefHeight="26.0" prefWidth="345.0" />
+                            </children>
+                            <HBox.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox spacing="5.0" />
+                        <VBox layoutX="175.0" layoutY="10.0" spacing="5.0">
+                            <children>
+                                <Label text="Data de Nascimento" />
+                                <!--DatePicker fx:id="calendario" prefHeight="26.0" prefWidth="165.0" /-->
+                                <TextField fx:id="txtFldDataNacimento" prefHeight="26.0" prefWidth="195.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="BOTTOM_CENTER" spacing="5.0">
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="E-mail" />
+                                <TextField fx:id="txtFldEmail" prefHeight="26.0" prefWidth="364.0" />
+                            </children>
+                        </VBox>
+                        <Button fx:id="btnConfirma" mnemonicParsing="false" onMouseClicked="#acConfirma" prefHeight="26.0" prefWidth="154.0" text="Confirma">
+                            <graphic>
+                                <MaterialDesignIconView glyphName="CHECK" />
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#acCancela" prefHeight="26.0" prefWidth="151.0" text="Cancela">
+                            <graphic>
+                                <MaterialDesignIconView glyphName="CLOSE" />
+                            </graphic>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                    </padding>
+                </HBox>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <VBox fx:id="boxDisciplinas" prefHeight="100.0">
+                <children>
+                    <Label text="Disciplinas">
+                        <VBox.margin>
+                            <Insets left="5.0" />
+                        </VBox.margin>
+                    </Label>
+                    <ListSelectionView fx:id="lstSelDisciplinas" />
+                </children>
+            </VBox>
+        </VBox>
+        
+    </children>
+</AnchorPane>

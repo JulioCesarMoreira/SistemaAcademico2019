@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="750.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DisciplinaController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox prefHeight="18.0" prefWidth="750.0">
+                    <children>
+                        <JFXButton fx:id="btnIncluir" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#acIncluir" prefHeight="26.0" prefWidth="26.0">
+                            <tooltip>
+                                <Tooltip text="Novo Cadastro de Disciplina..." />
+                            </tooltip>
+                            <graphic>
+                                <MaterialDesignIconView glyphName="PLUS_BOX" size="1.2em" wrappingWidth="16.0">
+                                    <cursor>
+                                        <Cursor fx:constant="NE_RESIZE" />
+                                    </cursor>
+                                </MaterialDesignIconView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAlterar" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#acAlterar" prefHeight="25.0" prefWidth="35.0">
+                            <tooltip>
+                                <Tooltip text="Alterar Cadastro de Disciplina..." />
+                            </tooltip>
+                            <graphic>
+                                <MaterialDesignIconView glyphName="PENCIL_BOX" size="1.2em" wrappingWidth="17.0">
+                                    <cursor>
+                                        <Cursor fx:constant="NE_RESIZE" />
+                                    </cursor>
+                                </MaterialDesignIconView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnExcluir" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#acExcluir" prefHeight="21.0" prefWidth="34.0">
+                            <tooltip>
+                                <Tooltip text="Excluir Cadastro de Disciplina..." />
+                            </tooltip>
+                            <graphic>
+                                <MaterialDesignIconView glyphName="DELETE_FOREVER" size="1.2em" wrappingWidth="16.0">
+                                    <cursor>
+                                        <Cursor fx:constant="NE_RESIZE" />
+                                    </cursor>
+                                </MaterialDesignIconView>
+                            </graphic>
+                        </JFXButton>
+                    </children>                    
+                </HBox>
+                <TableView fx:id="tblVwDisciplina" prefHeight="314.0" prefWidth="750.0">
+                    <columns>
+                        <TableColumn prefWidth="100.0" style="-fx-alignment: center-right;" text="Cod">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="codigo" />                            
+                            </cellValueFactory> 
+                        </TableColumn>
+                        <TableColumn minWidth="0.0" prefWidth="155.0"  style="-fx-alignment: center-left;" text="Nome">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="nome" />                            
+                            </cellValueFactory> 
+                        </TableColumn>                  
+                        <TableColumn prefWidth="100.0" style="-fx-alignment: center-right;" text="Aulas">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="aulas" />                            
+                            </cellValueFactory> 
+                        </TableColumn>                
+                        <TableColumn prefWidth="190.0" style="-fx-alignment: center-left;" text="Observação">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="observacao" />                            
+                            </cellValueFactory> 
+                        </TableColumn>
+                        <TableColumn prefWidth="200.0" style="-fx-alignment: center-left;" text="Professor">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="ProfessorNome" />                            
+                            </cellValueFactory> 
+                        </TableColumn>
+                        <TableColumn prefWidth="200.0" style="-fx-alignment: center-left;" text="maxAlunos">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="maxAlunos" />                            
+                            </cellValueFactory> 
+                        </TableColumn>
+                    </columns>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#acIncluir" text="Inlcuir" />
+                        <MenuItem fx:id="menuItemAlterar" mnemonicParsing="false" onAction="#acAlterar" text="Alterar" />
+                        <MenuItem fx:id="menuItemExcluir" mnemonicParsing="false" onAction="#acExcluir" text="Excluir" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
